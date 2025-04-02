@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annotatore Semantico</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 20px; }
+        h1 { text-align: center; }
+        .repo { border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 5px; }
+        .repo a { font-weight: bold; color: #007bff; text-decoration: none; }
+        .repo p { margin: 5px 0; color: #555; }
+        .repo pre { background: #f4f4f4; padding: 10px; border-radius: 5px; overflow-x: auto; }
+        .header { text-align: center; margin-bottom: 20px; }
+        .logo { max-width: 200px; height: auto; display: block; margin: 10px auto; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>RASTA</h1>
+        <p>Realtà Aumentata e Story-Telling Automatizzato per la valorizzazione di Beni Culturali ed Itinerari</p>
+        <img src="percorso/del/tuo/logo.png" alt="Logo RASTA" class="logo">
+    </div>
+
+    <div class="repo">
+        <h2>Annotatore Semantico</h2>
+        <p>L’annotatore semantico è composto da tre applicazioni web, accessibili tramite il seguente URL: <a href="http://rasta.orangee.it:81" target="_blank">http://rasta.orangee.it:81</a></p>
+        <p><strong>Protezione:</strong> L’accesso a questo indirizzo è protetto da password.</p>
+        <p><strong>Funzionalità principali:</strong></p>
+        <ul>
+            <li>Gestire gli utenti autorizzati all’uso dell’annotatore.</li>
+            <li>Amministrare le sessioni e il caricamento dei file.</li>
+            <li>Accedere alle due applicazioni secondarie responsabili dell’annotazione vera e propria.</li>
+        </ul>
+        <p><strong>Accesso alle risorse esterne:</strong></p>
+        <p>Nella pagina "Risorse esterne" sono presenti due pulsanti per avviare rispettivamente <strong>Simple Annotation Server</strong> e <strong>Brat</strong>. Anche queste due applicazioni effettuano una verifica dell’utenza: se l’utente non risulta autorizzato, verrà automaticamente reindirizzato alla pagina di login.</p>
+        <p><strong>Esecuzione locale:</strong></p>
+        <p>Essendo un sistema basato su applicazioni web, non è possibile eseguirlo localmente in modo diretto.</p>
+        <p>Nonostante tutte le componenti siano distribuite in container Docker, le configurazioni dei percorsi (endpoint) non sono dinamiche. Di conseguenza, per eseguire il sistema in locale è necessario:</p>
+        <ul>
+            <li>Ricompilare le applicazioni con i puntamenti adeguati all’ambiente locale.</li>
+            <li>Riconfigurare i web server affinché siano compatibili con l’esecuzione su localhost.</li>
+        </ul>
+    </div>
+
+</body>
+</html>
