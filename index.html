@@ -10,11 +10,27 @@
         .repo { border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 5px; }
         .repo a { font-weight: bold; color: #007bff; text-decoration: none; }
         .repo p { margin: 5px 0; color: #555; }
-        .repo pre { background: #f4f4f4; padding: 10px; border-radius: 5px; overflow-x: auto; }
+        .header { text-align: center; margin-bottom: 20px; }
+        .logo { max-width: 200px; height: auto; display: block; margin: 10px auto; }
+        .repo-list { list-style-type: none; padding: 0; }
+        .repo-list li { margin-bottom: 10px; }
     </style>
 </head>
 <body>
-    <h1>Elenco dei Repository</h1>
+    <div class="header">
+        <h1>RASTA</h1>
+        <p>Realtà Aumentata e Story-Telling Automatizzato per la valorizzazione di Beni Culturali ed Itinerari</p>
+        <img src="percorso/del/tuo/logo.png" alt="Logo RASTA" class="logo">
+    </div>
+
+    <h1>Elenco dei Repository attualmente disponibili</h1>
+    <ul class="repo-list">
+        <li><a href="annotatoresemantico.html" target="_blank">Annotatore Semantico</a></li>
+        <li><a href="https://github.com/vanvitellicode/or4recommender" target="_blank">RASTA Content Recommender System</a></li>
+        <li><a href="https://github.com/vanvitellicode/appRasta" target="_blank">RASTA App</a></li>
+        <li><a href="https://github.com/vanvitellicode/StorytellingTools" target="_blank">Storytelling Tools</a></li>
+    </ul>
+
     <div class="repo">
         <h2>Annotatore Semantico</h2>
         <p>L’annotatore semantico è composto da tre applicazioni web, accessibili tramite il seguente URL: <a href="http://rasta.orangee.it:81" target="_blank">http://rasta.orangee.it:81</a></p>
