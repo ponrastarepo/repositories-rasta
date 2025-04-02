@@ -4,17 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elenco Repository</title>
-    <style>
-        body { font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 20px; }
-        h1 { text-align: center; }
-        .repo { border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 5px; }
-        .repo a { font-weight: bold; color: #007bff; text-decoration: none; }
-        .repo p { margin: 5px 0; color: #555; }
-        .header { text-align: center; margin-bottom: 20px; }
-        .logo { max-width: 200px; height: auto; display: block; margin: 10px auto; }
-        .repo-list { list-style-type: none; padding: 0; }
-        .repo-list li { margin-bottom: 10px; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="header">
@@ -31,59 +21,7 @@
         <li><a href="storytellingtools.html" target="_blank">Storytelling Tools</a></li>
     </ul>
 
-    <div class="repo">
-        <h2>Annotatore Semantico</h2>
-        <p>L’annotatore semantico è composto da tre applicazioni web, accessibili tramite il seguente URL: <a href="http://rasta.orangee.it:81" target="_blank">http://rasta.orangee.it:81</a></p>
-        <p><strong>Protezione:</strong> L’accesso a questo indirizzo è protetto da password.</p>
-        <p><strong>Funzionalità principali:</strong></p>
-        <ul>
-            <li>Gestire gli utenti autorizzati all’uso dell’annotatore.</li>
-            <li>Amministrare le sessioni e il caricamento dei file.</li>
-            <li>Accedere alle due applicazioni secondarie responsabili dell’annotazione vera e propria.</li>
-        </ul>
-        <p><strong>Accesso alle risorse esterne:</strong></p>
-        <p>Nella pagina "Risorse esterne" sono presenti due pulsanti per avviare rispettivamente <strong>Simple Annotation Server</strong> e <strong>Brat</strong>. Anche queste due applicazioni effettuano una verifica dell’utenza: se l’utente non risulta autorizzato, verrà automaticamente reindirizzato alla pagina di login.</p>
-        <p><strong>Esecuzione locale:</strong></p>
-        <p>Essendo un sistema basato su applicazioni web, non è possibile eseguirlo localmente in modo diretto.</p>
-        <p>Nonostante tutte le componenti siano distribuite in container Docker, le configurazioni dei percorsi (endpoint) non sono dinamiche. Di conseguenza, per eseguire il sistema in locale è necessario:</p>
-        <ul>
-            <li>Ricompilare le applicazioni con i puntamenti adeguati all’ambiente locale.</li>
-            <li>Riconfigurare i web server affinché siano compatibili con l’esecuzione su localhost.</li>
-        </ul>
-    </div>
-    <div class="repo">
-        <a href="https://github.com/vanvitellicode/or4recommender" target="_blank">RASTA Content Recommender System</a>
-        <p><strong>Descrizione:</strong> Un sistema di raccomandazione di contenuti multimediali in un percorso statico di visita.</p>
-        <p><strong>Tecnologie:</strong> Python, OWL, REST API</p>
-        <p><strong>Requisiti Software:</strong> Python, requests, flask, flask_cors, owlready2, pykml, networkx</p>
-        <p><strong>Installazione:</strong></p>
-        <pre>pip install requests flask flask_cors owlready2 pykml networkx
-python3 main.py</pre>
-        <p><strong>Contatti:</strong> dario.branco@unicampania.it</p>
-    </div>
-
-    <div class="repo">
-        <a href="https://github.com/vanvitellicode/appRasta" target="_blank">RASTA App</a>
-        <p><strong>Descrizione:</strong> Un'applicazione scritta in Flutter per la visualizzazione di itinerari turistici.</p>
-        <p><strong>Tecnologie:</strong> Flutter, Dart</p>
-        <p><strong>Requisiti Software:</strong> Flutter, Dart</p>
-        <p><strong>Installazione:</strong> Apk lanciabile già presente nella repository.</p>
-        <pre>flutter pub get
-flutter run</pre>
-        <p><strong>Contatti:</strong> dario.branco@unicampania.it</p>
-    </div>
-
-    <div class="repo">
-        <a href="https://github.com/vanvitellicode/StorytellingTools" target="_blank">Storytelling Tools</a>
-        <p><strong>Descrizione:</strong> Una collection di tool utili per operazioni di configurazione, tra cui:</p>
-        <ul>
-            <li>Annotatore 3D</li>
-            <li>Software per Indoor Positioning (con app Android)</li>
-            <li>Generatore di String of Pearls</li>
-            <li>Plugin di Mirador per visualizzazione di contenuti 3D annotati</li>
-        </ul>
-        <p><strong>Contatti:</strong> dario.branco@unicampania.it</p>
-    </div>
+ 
 
 </body>
 </html>
