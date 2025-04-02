@@ -1,47 +1,85 @@
 body {
-    font-family: Arial, sans-serif;
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 900px; /* Aumentato la larghezza massima per più spazio */
+    margin: 40px auto; /* Aggiunto margine superiore e inferiore */
+    padding: 30px; /* Aumentato il padding interno */
+    background-color: #f8f8f8; /* Leggero sfondo grigio */
+    color: #333; /* Colore del testo principale */
+    line-height: 1.6; /* Miglioramento della leggibilità */
 }
 
 h1 {
     text-align: center;
+    color: #0056b3; /* Blu più intenso per i titoli */
+    margin-bottom: 20px;
+    font-weight: 600; /* Titoli leggermente più in grassetto */
+    letter-spacing: 0.5px; /* Spaziatura tra le lettere */
 }
 
 .repo {
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    background-color: white; /* Sfondo bianco per i repo */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Leggera ombra */
 }
 
 .repo a {
-    font-weight: bold;
+    font-weight: 600;
     color: #007bff;
     text-decoration: none;
+    transition: color 0.3s ease; /* Transizione per l'hover */
+}
+
+.repo a:hover {
+    color: #0056b3; /* Blu più intenso all'hover */
 }
 
 .repo p {
-    margin: 5px 0;
-    color: #555;
+    margin: 10px 0;
+    color: #666; /* Colore del testo dei paragrafi */
 }
 
 .repo pre {
-    background: #f4f4f4;
-    padding: 10px;
-    border-radius: 5px;
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 6px;
     overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace; /* Font monospace per il pre */
+    font-size: 0.9em; /* Dimensione del font leggermente più piccola */
 }
 
 .header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .logo {
-    width: 100%;
+    width: 80%; /* Ridotto leggermente la larghezza del logo */
+    max-width: 600px; /* Imposta una larghezza massima per il logo */
     height: auto;
     display: block;
-    margin: 10px auto;
+    margin: 20px auto; /* Aumentato il margine superiore e inferiore */
+}
+
+.repo-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.repo-list li {
+    margin-bottom: 15px;
+    font-size: 1.1em; /* Aumentato la dimensione del font per gli elementi della lista */
+}
+
+.repo-list li a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.repo-list li a:hover {
+    color: #0056b3;
 }
