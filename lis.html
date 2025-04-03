@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatar 3D per LIS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Avatar 3D per Lingua dei Segni Italiana (LIS)</h1>
+    </div>
+
+    <div class="repo">
+        <h2>Descrizione</h2>
+        <p>Lo strumento presenta un'applicazione web che implementa un Avatar 3D in grado di riprodurre i gesti necessari per rappresentare i segni della Lingua Italiana dei Segni (LIS).</p>
+
+        <h2>Tecnologie utilizzate</h2>
+        <ul>
+            <li><strong>Riferimento segni LIS:</strong> <a href="https://spreadthesign.com/it.it/search/" target="_blank">Spread the Sign</a> (European Sign Language Center)</li>
+            <li><strong>Creazione segni:</strong> <a href="https://www.sign-lang.uni-hamburg.de/dgs-korpus/hamnosys-97.html" target="_blank">HamNoSys</a> e <a href="https://www.fdr.uni-hamburg.de/record/9725#.YgKI8hNKhpI" target="_blank">HamNoSys Palette</a></li>
+            <li><strong>Rappresentazione segni:</strong> <a href="https://vh.cmp.uea.ac.uk/index.php/SiGML" target="_blank">SigML</a></li>
+            <li><strong>Traduzione HamNoSys a SigML:</strong> <a href="https://github.com/carolNeves/HamNoSys2SiGML" target="_blank">HamNoSys2SigML</a></li>
+            <li><strong>Applicazione:</strong> HTML, CSS, JavaScript</li>
+            <li><strong>Avatar 3D e animazione:</strong> Libreria JavaScript <a href="https://vh.cmp.uea.ac.uk/index.php/CWASA_Release_Notes" target="_blank">CWASA</a></li>
+        </ul>
+
+        <h2>Requisiti</h2>
+        <ul>
+            <li>Python installato (nessuna libreria specifica richiesta)</li>
+        </ul>
+        <h3>Per creazione Segni</h3>
+        <ul>
+            <li><a href="https://www.fdr.uni-hamburg.de/record/9725#.YgKI8hNKhpI" target="_blank">HamNoSys Palette</a> o font <a href="https://www.sign-lang.uni-hamburg.de/dgs-korpus/hamnosys-97.html" target="_blank">HamNoSys</a> (solo MacOS)</li>
+            <li><a href="https://github.com/carolNeves/HamNoSys2SiGML" target="_blank">HamNoSys2SigML</a> (conversione HamNoSys a SigML)</li>
+        </ul>
+        <h3>Per utilizzo Avatar</h3>
+        <ul>
+            <li>Browser web</li>
+        </ul>
+
+        <h2>Installazione</h2>
+        <ul>
+            <li>Scarica il <a href="https://github.com/Nm-AU/avatar-LIS" target="_blank">repository</a></li>
+        </ul>
+
+        <h2>Uso</h2>
+        <ol>
+            <li>Apri la directory principale del repository: <code>cd Avatar\ LIS</code></li>
+            <li>Avvia il server: <code>python -m http.server 8000</code></li>
+            <li>Apri il browser all'indirizzo: <a href="http://localhost:8000" target="_blank">http://localhost:8000</a></li>
+            <li>L'avatar animerà il file <code>demo/demo.sigml</code></li>
+        </ol>
+
+        <h2>Contatti</h2>
+        <p>Nicolò Maunero - <a href="mailto:nicolo.maunero@polito.it">nicolo.maunero@polito.it</a></p>
+
+        <h2>Licenza</h2>
+        <p>GPL-3.0, CC BY-NC-4.0</p>
+    </div>
+</body>
+</html>
