@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHIP - Piattaforma per Itinerari Culturali</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>CHIP</h1>
+        <p>Piattaforma digitale per la generazione di itinerari culturali in Umbria e la gestione di POI e TOI.</p>
+        <a href="https://github.com/GDV-UniPG/CHIP" target="_blank">Repository GitHub</a>
+    </div>
+
+    <div class="repo">
+        <h2>Informazioni sul Software</h2>
+        <p><strong>Nome del Software:</strong> CHIP</p>
+        <p><strong>Descrizione:</strong> Piattaforma digitale per:</p>
+        <ul>
+            <li>Generazione di itinerari culturali in Umbria.</li>
+            <li>Gestione di POI e TOI da parte degli amministratori territoriali.</li>
+        </ul>
+        <p><strong>Tecnologie utilizzate:</strong></p>
+        <ul>
+            <li><strong>Frontend:</strong> Angular 11.2.4 (rastaApp)</li>
+            <li><strong>Backend:</strong>
+                <ul>
+                    <li>Node.js 14.14.5 (POI-TOI-Manager, User-Profile Matchmaker)</li>
+                    <li>Python 3.9 (Scorer)</li>
+                    <li>Python 3.12 (Routeplanner)</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Installazione</h2>
+        <p><strong>rastaApp (Frontend):</strong></p>
+        <ol>
+            <li>Scarica la cartella "rastaApp" dal repository: <a href="https://github.com/GDV-UniPG/CHIP" target="_blank">https://github.com/GDV-UniPG/CHIP</a></li>
+            <li>Apri la cartella "rastaApp" da linea di comando.</li>
+            <li>Esegui:
+                <ul>
+                    <li><code>npm install</code> (installa le librerie)</li>
+                    <li><code>ng serve</code> (avvia l'applicazione)</li>
+                </ul>
+            </li>
+        </ol>
+
+        <p><strong>POI-TOI-Manager (Backend):</strong></p>
+        <ol>
+            <li>Scarica la cartella "backend/poi-toi-manager" dal repository.</li>
+            <li>Apri la cartella "poi-toi-manager" da linea di comando.</li>
+            <li>Esegui:
+                <ul>
+                    <li><code>npm install</code> (installa le librerie)</li>
+                    <li><code>node index</code> (avvia il server)</li>
+                </ul>
+            </li>
+        </ol>
+
+        <p><strong>User-Profile Matchmaker (Backend):</strong></p>
+        <ol>
+            <li>Scarica la cartella "backend/user-profile-matchmaker" dal repository.</li>
+            <li>Apri la cartella "user-profile-matchmaker" da linea di comando.</li>
+            <li>Esegui:
+                <ul>
+                    <li><code>npm install</code> (installa le librerie)</li>
+                    <li><code>node index</code> (avvia il server)</li>
+                </ul>
+            </li>
+        </ol>
+
+        <p><strong>Scorer (Backend):</strong></p>
+        <ol>
+            <li>Scarica la cartella "backend/scorer" dal repository.</li>
+            <li>Apri la cartella "scorer" da linea di comando.</li>
+            <li>Crea un ambiente virtuale (consigliato):
+                <ul>
+                    <li><code>python3.9 -m venv venv</code></li>
+                </ul>
+            </li>
+            <li>Attiva l'ambiente virtuale:
+                <ul>
+                    <li>Linux: <code>source venv/bin/activate</code></li>
+                    <li>Windows: <code>venv\Scripts\activate</code></li>
+                </ul>
+            </li>
+            <li>Esegui:
+                <ul>
+                    <li><code>pip install --upgrade pip setuptools wheel</code></li>
+                    <li><code>pip install -r requirements.txt</code></li>
+                    <li><code>pip install gensim</code></li>
+                    <li><code>python -m nltk.downloader punkt</code></li>
+                    <li><code>python server.py</code> (avvia il server)</li>
+                </ul>
+            </li>
+        </ol>
+        <p><strong>Routeplanner (Backend):</strong></p>
+        <ol>
+            <li>Scarica la cartella "routeplanner" dal repository.</li>
+            <li>Crea un ambiente virtuale (consigliato):
+                <ul>
+                    <li><code>python3.12 -m venv venv</code></li>
+                </ul>
+            </li>
+            <li>Attiva l'ambiente virtuale:
+                <ul>
+                    <li>Linux: <code>source venv/bin/activate</code></li>
+                    <li>Windows: <code>venv\Scripts\activate</code></li>
+                </ul>
+            </li>
+            <li>Esegui:
+                <ul>
+                    <li><code>pip install --upgrade pip setuptools wheel</code></li>
+                    <li><code>pip install -r requirements.txt</code></li>
+                    <li><code>python server_vrp.py</code> (avvia il server)</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>Uso</h2>
+        <p><strong>POI-TOI-Manager:</strong> Dopo l'avvio locale, accedi alla documentazione API tramite: <a href="http://localhost:3000/" target="_blank">http://localhost:3000/</a></p>
+        <p><strong>User-Profile Matchmaker:</strong> Dopo l'avvio locale, accedi alla documentazione API tramite: <a href="http://localhost:3200" target="_blank">http://localhost:3200</a></p>
+        <p><strong>Routeplanner:</strong> Contatta il server tramite API.</p>
+
+        <h2>Configurazione</h2>
+        <p><strong>rastaApp:</strong> Modifica "rastaApp/src/assets/environments/environment.prod.ts" con gli indirizzi dei moduli backend:</p>
+        <ul>
+            <li><code>TRAVEL_PLANNER_ADDRESS</code></li>
+            <li><code>POI_TOI_MANAGER_ADDRESS</code></li>
+            <li><code>POI_TOI_MATCHER_ADDRESS</code></li>
+        </ul>
+        <p><strong>POI-TOI-Manager:</strong> Crea un file ".env" in "backend/poi-toi-manager" con:</p>
+        <ul>
+            <li><code>PORT_REST</code>, <code>SECRET_JWT</code>, <code>DB_PASSWORD</code>, ecc.</li>
+        </ul>
+        <p><strong>User-Profile Matchmaker:</strong> Crea un file ".env" in "backend/user-profile-matchmaker" con:</p>
+        <ul>
+            <li><code>PORT</code>, <code>GRPC_SERVER_PORT</code>, <code>GRPC_SERVER_HOST</code></li>
+        </ul>
+        <p><strong>Routeplanner:</strong> Inserisci nel codice le costanti e carica i file necessari.</p>
+
+        <h2>Contatti</h2>
+        <ul>
+            <li>alice.fortuni@studenti.unipg.it</li>
+            <li>giulio.biondi@unipg.it</li>
+            <li>emilio.digiacomo@unipg.it</li>
+        </ul>
+    </div>
+</body>
+</html>
