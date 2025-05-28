@@ -14,22 +14,22 @@
     </div>
 
     <div class="repo">
-        <h2>12. Nome del Software</h2>
+        <h2>Nome del Software</h2>
         <p><strong>Itineraries and Point of Interests addition in RASTA PMS</strong><br>
         (instantiation of the developed modules in the context of Abruzzi National Park)</p>
 
-        <h2>13. Descrizione</h2>
+        <h2>Descrizione</h2>
         <p>The software is developed to facilitate the addition and management of POI descriptions within the RASTA POI Management System (PMS). Real POI descriptions from the Abruzzo National Park have been incorporated as part of the initial dataset.</p>
 
-        <h2>14. Tecnologie Utilizzate</h2>
+        <h2>Tecnologie Utilizzate</h2>
         <p>These technologies and tools are used in design and implementation of this software. Docker, Azure, and Apache Web Server provide the core infrastructure for deploying and hosting the system. EMQX, InfluxDB, Telegraf, and Grafana manage real-time IoT data collection, storage, and visualization. Backend services use Spring Boot and Spring AI for application logic and AI integration, while entity enrichment and machine learning are supported by OpenAI, Apache Stanbol, and Apache Mahout (see Deliverable D1.2 for full details).</p>
 
-        <h2>15. Requisiti</h2>
+        <h2>Requisiti</h2>
         <ul>
             <li>Docker must be installed on the machine.</li>
         </ul>
 
-        <h2>16. Installazione</h2>
+        <h2>Installazione</h2>
         <p>For the local installation to add itineraries and Point of Interests related to the Abruzzo National Park, run the <code>pna-data.sql</code> SQL script file in the <code>rastapms</code> database. This can be accomplished through a terminal or a database management tool such as phpMyAdmin.</p>
         <p>As a prerequisite, follow the official installation instructions for the RASTA PMS, available at:</p>
         <a href="https://github.com/gssi/official-rasta-pms/blob/main/Install.md" target="_blank">https://github.com/gssi/official-rasta-pms/blob/main/Install.md</a>
@@ -43,17 +43,17 @@ Windows:
 type .\pna-data.sql | docker exec -i mysql-db mysql -u rastapms -prastapms rastapms --default-character-set=utf8mb4
         </pre>
 
-        <h2>17. Usage</h2>
+        <h2>Usage</h2>
         <p>Source code repository for itineraries and POIs addition:</p>
         <a href="https://github.com/gssi/official-rasta-or6" target="_blank">https://github.com/gssi/official-rasta-or6</a>
 
         <p>Once the user logs into the RASTA PMS interface, they can view and manage the added itineraries and POIs. In the interface, clicking on "Point of Interest" on the left-hand menu shows a list of POIs sourced from:</p>
         <a href="https://www.parcoabruzzo.it/page.php?id=251" target="_blank">https://www.parcoabruzzo.it/page.php?id=251</a>
 
-        <h2>18. Configurazione</h2>
+        <h2>Configurazione</h2>
         <p>The entire architecture will run on Docker as independent modules. The deployment procedure is explained in Deliverable D2.6.</p>
 
-        <h2>19. Contatti</h2>
+        <h2>Contatti</h2>
         <p>The following members from the Gran Sasso Science Institute (GSSI) are involved in the RASTA POI Management System project:</p>
         <ul>
             <li>Sadia Azam</li>
