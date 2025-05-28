@@ -13,21 +13,21 @@
     </div>
 
     <div class="repo">
-        <h2>19. Nome del Software</h2>
+        <h2>Nome del Software</h2>
         <p><strong>Implementation of the IoT infrastructure and Dashboards</strong></p>
 
-        <h2>20. Descrizione</h2>
+        <h2>Descrizione</h2>
         <p>This section provides the deployment details of the IoT infrastructure that is part of the architecture proposed in Task OR1.6 and OR2.6. It also describes the design and functionality of the associated dashboards used in the implementation.</p>
 
-        <h2>21. Tecnologie Utilizzate</h2>
+        <h2>Tecnologie Utilizzate</h2>
         <p>Docker, Azure, Apache Web Server, EMQX, InfluxDB, Telegraf, Grafana, Spring Boot, Spring AI, OpenAI, Apache Stanbol, Apache Mahout. For full details see Deliverable D1.2.</p>
 
-        <h2>22. Requisiti</h2>
+        <h2>Requisiti</h2>
         <ul>
             <li>Docker must be installed on the machine.</li>
         </ul>
 
-        <h2>23. Installazione</h2>
+        <h2>Installazione</h2>
         <h3>EMQX</h3>
         <pre>
 docker pull emqx
@@ -90,11 +90,11 @@ docker run -d --name=grafana \
 grafana/grafana
         </pre>
 
-        <h2>24. Usage</h2>
+        <h2>Usage</h2>
         <p>To manage the authorized users on CloudFlare to grant access to the RASTA dashboards:</p>
         <p>Each DNS request is first verified by CloudFlare (authorization and authentication). If valid, it is routed to the Azure VM, where an internal basic authorization is also applied. Users were grouped into teams and granted access using one-time access tokens via CloudFlare.</p>
 
-        <h2>25. Configurazione</h2>
+        <h2>Configurazione</h2>
         <p>For Docker-based configuration of Telegraf:</p>
         <pre>
 nano &lt;path&gt;/telegraf.conf
@@ -112,7 +112,7 @@ tag_keys = ["clientid"]
 fieldpass = ["unit"]
         </pre>
 
-        <h2>26. Contatti</h2>
+        <h2>Contatti</h2>
         <p>Gran Sasso Science Institute (GSSI) – Team RASTA:</p>
         <ul>
             <li>Sadia Azam</li>
