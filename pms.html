@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RASTA PMS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>RASTA POI Management System</h1>
+        <p>Realtà Aumentata e Story-Telling Automatizzato – Sistema di gestione dei Punti di Interesse (POI)</p>
+        <img src="logorasta.png" alt="Logo RASTA" class="logo">
+    </div>
+
+    <div class="repo">
+        <h2>1. Nome del Software</h2>
+        <p><strong>RASTA Poi-Management System</strong></p>
+
+        <h2>2. Descrizione</h2>
+        <p>Il POI Management System (PMS) è progettato per gestire i Punti di Interesse (POI), permettendo ai contributori di creare, modificare e pubblicare informazioni. Il sistema include funzionalità di front-end e back-office: la parte pubblica mostra i dati inseriti, mentre il back-office offre un'interfaccia per l'inserimento e gestione.</p>
+
+        <h2>3. Tecnologie Utilizzate</h2>
+        <p>Docker, Azure, Apache Web Server, EMQX, InfluxDB, Telegraf, Grafana, Spring Boot, Spring AI, OpenAI, Apache Mahout, Apache Stanbol (deprecato). Per i dettagli completi, consultare il Deliverable D1.2.</p>
+
+        <h2>4. Requisiti</h2>
+        <ul>
+            <li>Windows, Mac OS X, Unix</li>
+            <li>OpenJDK 21 (o Eclipse Adoptium)</li>
+            <li>Apache Maven</li>
+            <li>MySQL (incluso in MAMP per uso locale)</li>
+        </ul>
+
+        <h2>5. Installazione</h2>
+        <pre>
+1. Creare il DB 'rastapms' con:
+   username = rastapms
+   password = rastapms
+
+2. Eseguire lo script SQL: rasta-pms.sql
+
+3. Compilare:
+   mvn clean compile
+
+4. Avviare:
+   mvn spring-boot:run
+
+5. Aprire il browser su:
+   http://localhost:8080/rastapms/
+        </pre>
+
+        <h2>6. Usage</h2>
+        <p>Repository di codice e installazione:</p>
+        <ul>
+            <li><a href="https://github.com/gssi/official-rasta-pms" target="_blank">official-rasta-pms</a></li>
+            <li><a href="https://github.com/gssi/rasta-me" target="_blank">rasta-me (REST Services)</a></li>
+            <li><a href="https://github.com/gssi/official-rasta-or6" target="_blank">official-rasta-or6 (istanza OR6)</a></li>
+        </ul>
+        <p>Il login si effettua tramite l’icona con la freccia in alto a destra nella homepage.</p>
+        <p>La gestione dei POI include arricchimento semantico con OpenAI e categorizzazione automatica.</p>
+        <p>Sono presenti 21 descrizioni POI del Parco Nazionale d’Abruzzo.</p>
+
+        <h2>7. Configurazione</h2>
+        <p>L’architettura è completamente dockerizzata. I dettagli di deployment sono nel Deliverable D2.6.</p>
+
+        <h2>8. Contatti</h2>
+        <p>Team GSSI: Sadia Azam, Maria Giovanna Brandano, Gianlorenzo D'Angelo, Martina De Sanctis, Amleto Di Salle, Paola Inverardi, Ludovico Iovino, Rickson Pereira, Claudio Pompilio, Franco Raimondi</p>
+        <p>Contatti e supporto tecnico: consultare il sito ufficiale del <a href="https://www.gssi.it/" target="_blank">GSSI</a>  .</p>
+    </div>
+</body>
+</html>
