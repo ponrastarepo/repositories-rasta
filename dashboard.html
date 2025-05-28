@@ -3,31 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RASTA - IoT Infrastructure and Dashboards</title>
+    <title>RASTA - Infrastruttura IoT e Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="header">
-        <h1>Implementation of the IoT Infrastructure and Dashboards</h1>
-        <p>Deployment e configurazione dell’architettura IoT e dei cruscotti per il progetto RASTA</p>
+        <h1>Implementazione dell'Infrastruttura IoT e Dashboard</h1>
+        <p>Distribuzione e configurazione dell’architettura IoT e dei cruscotti per il progetto RASTA</p>
     </div>
 
     <div class="repo">
         <h2>Nome del Software</h2>
-        <p><strong>Implementation of the IoT infrastructure and Dashboards</strong></p>
+        <p><strong>Implementazione dell'infrastruttura IoT e delle Dashboard</strong></p>
 
         <h2>Descrizione</h2>
-        <p>This section provides the deployment details of the IoT infrastructure that is part of the architecture proposed in Task OR1.6 and OR2.6. It also describes the design and functionality of the associated dashboards used in the implementation.</p>
+        <p>Questa sezione fornisce i dettagli di distribuzione dell'infrastruttura IoT, parte dell'architettura proposta nei Task OR1.6 e OR2.6. Include anche la descrizione del design e delle funzionalità delle dashboard associate.</p>
 
         <h2>Tecnologie Utilizzate</h2>
-        <p>Docker, Azure, Apache Web Server, EMQX, InfluxDB, Telegraf, Grafana, Spring Boot, Spring AI, OpenAI, Apache Stanbol, Apache Mahout. For full details see Deliverable D1.2.</p>
+        <p>Docker, Azure, Apache Web Server, EMQX, InfluxDB, Telegraf, Grafana, Spring Boot, Spring AI, OpenAI, Apache Stanbol, Apache Mahout. Per i dettagli completi consultare il Deliverable D1.2.</p>
 
         <h2>Requisiti</h2>
         <ul>
-            <li>Docker must be installed on the machine.</li>
+            <li>È necessario avere Docker installato sulla macchina.</li>
         </ul>
 
         <h2>Installazione</h2>
+
         <h3>EMQX</h3>
         <pre>
 docker pull emqx
@@ -37,10 +38,14 @@ docker network create --driver bridge influxdb-telegraf-net
 sudo docker volume create --name emqx-data
 sudo docker volume create --name emqx-log
 
-sudo docker run -d --name emqx-rasta -e "EMQX_NODE_NAME=emqx@rasta.emqx.com" -p 18083:18083 -p 1883:1883 -v emqx-data:/opt/emqx/data -v emqx-log:/opt/emqx/log --network influxdb-telegraf-net --network-alias rasta.emqx.com emqx:latest
+sudo docker run -d --name emqx-rasta -e "EMQX_NODE_NAME=emqx@rasta.emqx.com" -p 18083:18083 -p 1883:1883 \
+-v emqx-data:/opt/emqx/data -v emqx-log:/opt/emqx/log \
+--network influxdb-telegraf-net --network-alias rasta.emqx.com emqx:latest
 
-# Per altre istanze (non open source):
-sudo docker run -d --name emqx-rasta -e "EMQX_NODE_NAME=emqx@rasta.emqx.com" -v emqx-data:/opt/emqx/data -v emqx-log:/opt/emqx/log --network influxdb-telegraf-net --network-alias rasta.emqx.com emqx:latest
+# Per altre istanze (versioni non open-source):
+sudo docker run -d --name emqx-rasta -e "EMQX_NODE_NAME=emqx@rasta.emqx.com" \
+-v emqx-data:/opt/emqx/data -v emqx-log:/opt/emqx/log \
+--network influxdb-telegraf-net --network-alias rasta.emqx.com emqx:latest
 
 docker exec -it emqx-rasta bash
 emqx ctl cluster join emqx@changes.emqx.com
@@ -52,8 +57,8 @@ docker run --name influxdb2 --publish 8086:8086 \
 --mount type=volume,source=influxdb2-data,target=/var/lib/influxdb2 \
 --mount type=volume,source=influxdb2-config,target=/etc/influxdb2 \
 --env DOCKER_INFLUXDB_INIT_MODE=setup \
---env DOCKER_INFLUXDB_INIT_USERNAME=&lt;influx-rasta.user&gt; \
---env DOCKER_INFLUXDB_INIT_PASSWORD=&lt;password&gt; \
+--env DOCKER_INFLUXDB_INIT_USERNAME=<utente-influx> \
+--env DOCKER_INFLUXDB_INIT_PASSWORD=<password> \
 --env DOCKER_INFLUXDB_INIT_ORG=rasta \
 --env DOCKER_INFLUXDB_INIT_BUCKET=rasta \
 --network influxdb-telegraf-net \
@@ -62,17 +67,17 @@ docker run --name influxdb2 --publish 8086:8086 \
 
         <h3>Telegraf</h3>
         <pre>
-nano &lt;path&gt;/telegraf.conf
+nano <percorso>/telegraf.conf
 
-docker run -v &lt;path&gt;/telegraf.conf:/etc/telegraf/telegraf.conf:ro \
+docker run -v <percorso>/telegraf.conf:/etc/telegraf/telegraf.conf:ro \
 --network influxdb-telegraf-net --name telegraf --detach telegraf
         </pre>
 
-        <h4>Contenuto minimo telegraf.conf</h4>
+        <h4>Contenuto minimo del file telegraf.conf</h4>
         <pre>
 servers = ["tcp://rasta.emqx.com:1883"]
-username = &lt;mqtt-user&gt;
-password = &lt;mqtt_password&gt;
+username = <mqtt-user>
+password = <mqtt-password>
 
 tag_keys = ["clientid"]
 fieldpass = ["unit"]
@@ -86,28 +91,28 @@ docker run -d --name=grafana \
 --network influxdb-telegraf-net \
 --volume grafana-storage:/var/lib/grafana \
 -p 80:3000 \
--e "GF_SERVER_DOMAIN=&lt;server_url&gt;" \
+-e "GF_SERVER_DOMAIN=<url_server>" \
 grafana/grafana
         </pre>
 
-        <h2>Usage</h2>
-        <p>To manage the authorized users on CloudFlare to grant access to the RASTA dashboards:</p>
-        <p>Each DNS request is first verified by CloudFlare (authorization and authentication). If valid, it is routed to the Azure VM, where an internal basic authorization is also applied. Users were grouped into teams and granted access using one-time access tokens via CloudFlare.</p>
+        <h2>Utilizzo</h2>
+        <p>Per gestire gli utenti autorizzati tramite CloudFlare e consentire l’accesso alle dashboard RASTA:</p>
+        <p>Ogni richiesta DNS viene prima verificata da CloudFlare (autenticazione e autorizzazione). Se autorizzata, la richiesta viene inoltrata all'indirizzo pubblico della VM Azure, dove viene applicata anche un’autenticazione interna di base. Gli utenti sono stati raggruppati in team e l’accesso è stato concesso tramite link temporanei.</p>
 
         <h2>Configurazione</h2>
-        <p>For Docker-based configuration of Telegraf:</p>
+        <p>Per configurare Telegraf in ambiente Docker:</p>
         <pre>
-nano &lt;path&gt;/telegraf.conf
+nano <percorso>/telegraf.conf
 
-docker run -v &lt;path&gt;/telegraf.conf:/etc/telegraf/telegraf.conf:ro \
+docker run -v <percorso>/telegraf.conf:/etc/telegraf/telegraf.conf:ro \
 --network influxdb-telegraf-net --name telegraf --detach telegraf
         </pre>
 
-        <h4>Parametri telegraf.conf</h4>
+        <h4>Parametri nel file telegraf.conf</h4>
         <pre>
 servers = ["tcp://rasta.emqx.com:1883"]
-username = &lt;mqtt-user&gt;
-password = &lt;mqtt_password&gt;
+username = <mqtt-user>
+password = <mqtt-password>
 tag_keys = ["clientid"]
 fieldpass = ["unit"]
         </pre>
@@ -126,7 +131,13 @@ fieldpass = ["unit"]
             <li>Claudio Pompilio</li>
             <li>Franco Raimondi</li>
         </ul>
-        <p>Per assistenza tecnica, consultare il sito ufficiale del GSSI.</p>
+        <p>Per assistenza tecnica, consultare il sito ufficiale del <a href="https://www.gssi.it/" target="_blank">GSSI</a>.</p>
+
+        <h2>Documentazione completa</h2>
+        <p>Per maggiori dettagli, consulta la documentazione PDF completa disponibile nella repository GitHub:</p>
+        <a href="schedaPMS.pdf" target="_blank">
+            Scarica la documentazione completa (PDF)
+        </a>
     </div>
 </body>
 </html>
