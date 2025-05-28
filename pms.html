@@ -14,58 +14,76 @@
     </div>
 
     <div class="repo">
-        <h2>1. Nome del Software</h2>
-        <p><strong>RASTA Poi-Management System</strong></p>
+        <h2>Nome del Software</h2>
+        <p><strong>RASTA POI Management System</strong></p>
 
-        <h2>2. Descrizione</h2>
-        <p>Il POI Management System (PMS) è progettato per gestire i Punti di Interesse (POI), permettendo ai contributori di creare, modificare e pubblicare informazioni. Il sistema include funzionalità di front-end e back-office: la parte pubblica mostra i dati inseriti, mentre il back-office offre un'interfaccia per l'inserimento e gestione.</p>
+        <h2>Descrizione</h2>
+        <p>Il POI Management System (PMS) è progettato per gestire i Punti di Interesse (POI), permettendo ai contributori di creare, modificare e pubblicare informazioni. Il sistema include funzionalità sia di front-end (accessibile al pubblico) che di back-office (per la gestione e l’inserimento dei dati).</p>
 
-        <h2>3. Tecnologie Utilizzate</h2>
-        <p>Docker, Azure, Apache Web Server, EMQX, InfluxDB, Telegraf, Grafana, Spring Boot, Spring AI, OpenAI, Apache Mahout, Apache Stanbol (deprecato). Per i dettagli completi, consultare il Deliverable D1.2.</p>
+        <h2>Tecnologie Utilizzate</h2>
+        <p>Docker, Azure, Apache Web Server, EMQX, InfluxDB, Telegraf, Grafana, Spring Boot, Spring AI, OpenAI, Apache Mahout, Apache Stanbol (deprecato). Per i dettagli completi si rimanda al Deliverable D1.2.</p>
 
-        <h2>4. Requisiti</h2>
+        <h2>Requisiti</h2>
         <ul>
-            <li>Windows, Mac OS X, Unix</li>
+            <li>Windows, Mac OS X, o sistemi Unix-based</li>
             <li>OpenJDK 21 (o Eclipse Adoptium)</li>
             <li>Apache Maven</li>
-            <li>MySQL (incluso in MAMP per uso locale)</li>
+            <li>MySQL (presente in MAMP per installazioni locali)</li>
         </ul>
 
-        <h2>5. Installazione</h2>
+        <h2>Installazione</h2>
         <pre>
-1. Creare il DB 'rastapms' con:
+1. Creare il database 'rastapms' con:
    username = rastapms
    password = rastapms
 
 2. Eseguire lo script SQL: rasta-pms.sql
 
-3. Compilare:
+3. Compilare il progetto:
    mvn clean compile
 
-4. Avviare:
+4. Avviare il server:
    mvn spring-boot:run
 
-5. Aprire il browser su:
+5. Aprire il browser all’indirizzo:
    http://localhost:8080/rastapms/
         </pre>
 
-        <h2>6. Usage</h2>
-        <p>Repository di codice e installazione:</p>
+        <h2>Utilizzo</h2>
+        <p>Repository di codice sorgente e installazione:</p>
         <ul>
             <li><a href="https://github.com/gssi/official-rasta-pms" target="_blank">official-rasta-pms</a></li>
-            <li><a href="https://github.com/gssi/rasta-me" target="_blank">rasta-me (REST Services)</a></li>
+            <li><a href="https://github.com/gssi/rasta-me" target="_blank">rasta-me (servizi REST)</a></li>
             <li><a href="https://github.com/gssi/official-rasta-or6" target="_blank">official-rasta-or6 (istanza OR6)</a></li>
         </ul>
-        <p>Il login si effettua tramite l’icona con la freccia in alto a destra nella homepage.</p>
-        <p>La gestione dei POI include arricchimento semantico con OpenAI e categorizzazione automatica.</p>
-        <p>Sono presenti 21 descrizioni POI del Parco Nazionale d’Abruzzo.</p>
+        <p>L’accesso avviene tramite l’icona con freccia in alto a destra nella homepage dell’applicazione.</p>
+        <p>Il sistema supporta l’arricchimento semantico con OpenAI e la categorizzazione automatica dei contenuti.</p>
+        <p>Sono già state inserite 21 descrizioni di POI relativi al Parco Nazionale d’Abruzzo.</p>
 
-        <h2>7. Configurazione</h2>
-        <p>L’architettura è completamente dockerizzata. I dettagli di deployment sono nel Deliverable D2.6.</p>
+        <h2>Configurazione</h2>
+        <p>L’architettura è completamente containerizzata tramite Docker. I dettagli del deployment sono documentati nel Deliverable D2.6.</p>
 
-        <h2>8. Contatti</h2>
-        <p>Team GSSI: Sadia Azam, Maria Giovanna Brandano, Gianlorenzo D'Angelo, Martina De Sanctis, Amleto Di Salle, Paola Inverardi, Ludovico Iovino, Rickson Pereira, Claudio Pompilio, Franco Raimondi</p>
-        <p>Contatti e supporto tecnico: consultare il sito ufficiale del <a href="https://www.gssi.it/" target="_blank">GSSI</a>  .</p>
+        <h2>Contatti</h2>
+        <p>I seguenti membri del Gran Sasso Science Institute (GSSI) partecipano allo sviluppo del sistema:</p>
+        <ul>
+            <li>Sadia Azam</li>
+            <li>Maria Giovanna Brandano</li>
+            <li>Gianlorenzo D'Angelo</li>
+            <li>Martina De Sanctis</li>
+            <li>Amleto Di Salle</li>
+            <li>Paola Inverardi</li>
+            <li>Ludovico Iovino</li>
+            <li>Rickson Pereira</li>
+            <li>Claudio Pompilio</li>
+            <li>Franco Raimondi</li>
+        </ul>
+        <p>Per supporto tecnico o richieste, consultare il sito ufficiale del <a href="https://www.gssi.it/" target="_blank">GSSI</a>.</p>
+
+        <h2>Documentazione completa</h2>
+        <p>Per ulteriori dettagli e guide approfondite, consulta la documentazione completa in PDF:</p>
+        <a href="schedaPMS.pdf" target="_blank">
+            Scarica la documentazione completa (PDF)
+        </a>
     </div>
 </body>
 </html>
